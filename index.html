@@ -73,7 +73,7 @@
 
     .section-label {
       display: inline-block;
-      font-size: 0.76rem;
+      font-size: 0.68rem;
       letter-spacing: 0.12em;
       font-weight: 700;
       color: var(--primary);
@@ -187,8 +187,9 @@
       list-style: none;
       display: flex;
       align-items: center;
-      gap: 1.4rem;
+      gap: 2rem;
       justify-self: center;
+      margin-left: 2rem;
     }
 
     .nav-links a {
@@ -219,6 +220,10 @@
       transform: scaleX(1);
     }
 
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
     .nav-cta {
       justify-self: end;
       padding: 0.6rem 1.2rem;
@@ -227,15 +232,19 @@
 
     #home {
       background: linear-gradient(to right, #f0fdfa, #ffffff);
-      padding-top: 2.5rem;
-      padding-bottom: 2.5rem;
+      padding-top: 3.2rem;
+      padding-bottom: 3.5rem;
     }
 
     .hero-grid {
       display: grid;
       gap: 2.5rem;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.03fr 0.97fr;
       align-items: center;
+    }
+
+    .hero-content {
+      max-width: 480px;
     }
 
     .hero-content h1 {
@@ -266,7 +275,7 @@
 
     .hero-image {
       width: 100%;
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-md);
       object-fit: cover;
       min-height: 460px;
       box-shadow: var(--shadow-sm);
@@ -279,25 +288,25 @@
     .treatments-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
     .treatment-card {
       background: #fff;
-      border: none;
+      border: 1px solid #e2e8f0;
       border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      box-shadow: none;
     }
 
     .treatment-card img {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 8 / 5;
       width: 100%;
       object-fit: cover;
     }
 
     .treatment-card-content {
-      padding: 1rem;
+      padding: 1.2rem;
     }
 
     .treatment-card h3 {
@@ -314,50 +323,56 @@
 
     #fees {
       background: #fff;
-      padding-top: 4.8rem;
+      padding-top: 5.5rem;
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .pricing-card {
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 1.2rem;
+      padding: 0.65rem;
       position: relative;
       background: #fff;
+      text-align: center;
     }
 
     .pricing-card h3 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
+      padding-bottom: 0.15rem;
     }
 
     .pricing-card .sub {
       color: var(--text-muted);
       font-size: 0.95rem;
-      margin-bottom: 0.95rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .popular {
       border: 2px solid var(--primary);
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
+      transform: none;
+      box-shadow: none;
+      padding-top: 1.8rem;
     }
 
     .popular-badge {
       position: absolute;
-      top: -0.78rem;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -2px;
+      left: auto;
+      right: -2px;
+      transform: none;
       background: var(--primary);
       color: #fff;
-      border-radius: 999px;
-      padding: 0.3rem 0.72rem;
-      font-size: 0.7rem;
+      border-radius: 0 10px 0 8px;
+      padding: 0.25rem 0.72rem;
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -367,7 +382,7 @@
     .price-list {
       list-style: none;
       display: grid;
-      gap: 0.65rem;
+      gap: 0.3rem;
     }
 
     .price-row {
@@ -379,6 +394,7 @@
       border-radius: 10px;
       padding: 0.62rem 0.72rem;
       transition: box-shadow var(--transition), transform var(--transition);
+      text-align: left;
     }
 
     .price-row:hover {
@@ -403,6 +419,7 @@
       gap: 0.55rem;
       color: #1e293b;
       font-size: 0.95rem;
+      text-align: left;
     }
 
     .price-row i {
@@ -433,6 +450,7 @@
       background: var(--bg-alt);
       padding-top: 5rem;
       padding-bottom: 5rem;
+      border-top: 1px solid #e2e8f0;
     }
 
     .contact-grid {
@@ -721,7 +739,7 @@
 
       <nav aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
+          <li><a href="#home" class="active">Home</a></li>
           <li><a href="#treatments">Treatments</a></li>
           <li><a href="#fees">Fees</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -735,7 +753,7 @@
   <main>
     <section id="home">
       <div class="container hero-grid">
-        <div class="hero-content" style="width: 480px; max-width: 480px;">
+        <div class="hero-content">
           <p class="section-label" style="color: #0e7490;">Welcome to BrightSmile Dental</p>
           <h1>Your Smile Deserves the <span>Best Care</span></h1>
           <p>
@@ -996,7 +1014,8 @@
               <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
               <div>
                 <h3>Call Us</h3>
-                <p>+44 (0)20 7946 0321<br>Mon&ndash;Fri: 8am&ndash;7pm<br>Sat: 9am&ndash;3pm</p>
+                <p><a href="tel:+442079460321" style="color:#0e7490;">+44 (0)20 7946 0321</a><br>Mon&ndash;Fri:
+                  8am&ndash;7pm<br>Sat: 9am&ndash;3pm</p>
               </div>
             </article>
 
@@ -1004,7 +1023,8 @@
               <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
               <div>
                 <h3>Email Us</h3>
-                <p>hello@brightsmile.co.uk<br>We reply within 24 hours.</p>
+                <p><a href="mailto:hello@brightsmile.co.uk" style="color:#0e7490;">hello@brightsmile.co.uk</a><br>We
+                  reply within 24 hours.</p>
               </div>
             </article>
 
